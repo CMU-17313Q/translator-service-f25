@@ -26,7 +26,7 @@ pytest                      # You should see the tests in test_translator.py run
 flask run --host:0.0.0.0 --port=8080                   # Starts a web server on http://<your-gpu-vm>.qatar.cmu.edu:8080
 ```
 
-Navigate to [http://your-gpu-vm:8080/?content=Dies ist eine Nachricht auf Deutsch](http://<your-gpu-vm>:8080/?content=Dies%20ist%20eine%20Nachricht%20auf%20Deutsch) (replace <your-gpu-vm> with the hostname of your GPU VM, and you should see the response JSON:
+Navigate to [http://your-gpu-vm:8080/?content=Dies ist eine Nachricht auf Deutsch](http://your-gpu-vm:8080/?content=Dies%20ist%20eine%20Nachricht%20auf%20Deutsch) (replace your-gpu-vm with the hostname of your GPU VM, and you should see the response JSON:
 
 ```
 {"is_english":false,"translated_content":"This is a German message"}
@@ -45,7 +45,7 @@ You can merge this commit directly if you know how to set up a new remote and pe
 
 Then redeploy NodeBB to your Linux VM using Docker.
 
-Now, when you create a new post using one of the hard-coded non-English texts they should get translated auotmatically by the back-end:
+Now, when you create a new post using one of the hard-coded non-English text they should get translated automatically by the back-end:
 
 ![image](https://github.com/user-attachments/assets/61f1d9ca-3ca4-4a68-8869-d381d3d06ac6)
 
@@ -58,12 +58,12 @@ Clicking the button reveals...
 ![image](https://github.com/user-attachments/assets/1e804235-684f-46fd-b016-0d3dd3297991)
 
 
-# Implementing the LLM based translator
+# Implementing the LLM-based translator
 
-Please replace `translate` method in `src/translator.py` with your LLM based
+Please replace `translate` method in `src/translator.py` with your LLM-based
 implementation. The `translate` method takes a string `content` as input and
 returns a tuple `(bool, str)`, indicating if `content` is in English and
-the translated content if `content` is not in English.  This should call out to your python service you developed.
+the translated content if `content` is not in English.  This should call out to your Python service you developed.
 
 ## Handle responses from the LLM
 
